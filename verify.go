@@ -246,7 +246,7 @@ func verifyCertChain(ee *x509.Certificate, certs []*x509.Certificate, truststore
 	}
 	chains, err = ee.Verify(verifyOptions)
 	if err != nil {
-		return chains, fmt.Errorf("pkcs7: failed to verify certificate chain: %v", err)
+		return chains, fmt.Errorf("pkcs7: failed to verify certificate chain: %w", err)
 	}
 	return
 }
